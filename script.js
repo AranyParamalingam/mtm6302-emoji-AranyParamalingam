@@ -1,3 +1,5 @@
+//created an array of objects
+//each emoji is an object with emoji and name
 const emojiArray = [
     {
         emoji: '&#129409',
@@ -49,35 +51,27 @@ const emojiArray = [
     },
 ];
 
+//retrieving the div in html
 const outputGrid = document.getElementById('outputGrid');
 
+//created for loop to output emoji arrary
 for (let i = 0; i < emojiArray.length; i++) {
+    //created each emoji item
     const element = document.createElement('div');
     element.classList.add('grid-item');
-    element.innerHTML = emojiArray[i];
+
+    //adds the emoji
+    const emojiElement = document.createElement('div');
+    emojiElement.classList.add('emoji');
+    emojiElement.innerHTML = emojiArray[i].emoji;
+
+    //adds the name
+    const nameElement = document.createElement('div');
+    nameElement.classList.add('name');
+    nameElement.textContent = emojiArray[i].name;
+
+    element.appendChild(emojiElement);
+    element.appendChild(nameElement);
+
     outputGrid.appendChild(element);
 }
-
-/*const emojiArray = [
-    '&#129409',
-    '&#129398',
-    '&#129396',
-    '&#129393',
-    '&#129402',
-    '&#128586',
-    '&#128128',
-    '&#128561',
-    '&#128563',
-    '&#128536',
-    '&#128512',
-    '&#128539',
-];
-
-const outputGrid = document.getElementById('outputGrid');
-
-for (let i = 0; i < emojiArray.length; i++) {
-    const element = document.createElement('div');
-    element.classList.add('grid-item');
-    element.innerHTML = emojiArray[i];
-    outputGrid.appendChild(element);
-}*/
